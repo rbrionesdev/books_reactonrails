@@ -3,6 +3,8 @@ import NavBar from './components/Navbar';
 import Home from './components/Home';
 import Books from "./components/Books"
 import { Switch, Route } from "react-router-dom";
+import BookForm from "./components/BookForm";
+// import EditBookForm from "./components/EditBookForm";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/books" component={Books} />
-        {/* <Route exact path="/new" component={BookNew} /> */}
+        <Route exact path="/books/new" component={BookForm} />
+        {/* <Route exact path="/facts/:id/edit" component={EditFactForm} /> */}
+
         <Route component={() => <h1>Not Found</h1>} />
       </Switch>
     </div>
