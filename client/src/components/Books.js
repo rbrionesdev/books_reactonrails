@@ -23,8 +23,28 @@ const Books = (props) => {
     }
   };
 
+  const deleteBook = async (id) => {
+    try {
+      let res = await axios.delete(`/api/books/${id}`);
+      let filterBooks = books.filter((b) => b.id !== id);
+      setBooks(filterBooks);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const updateBook = (book) => {
+    let updateBooks = books.map((b) => (b.id == book.id ? book : b));
+    setBooks(updateBooks);
+  };
+
   const renderBooks = () => {
-    return books.map((b) => <Book key={b.id} {...b} />);
+    return books.map((b) => 
+    <Book 
+    deleteBookProp={deleteBook} 
+    updateBookProp={updateBook} 
+    key={b.id} 
+    {...b} />);
   };
 
   return (

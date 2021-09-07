@@ -1,7 +1,10 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
+import { useHistory } from "react-router";
 
-const Book = ({ id, title, author }) => {
+
+
+const Book = ({ id, title, author, deleteBookProp }) => {
   // const handleStarClick = async (newValue) => {
   //   console.log(`Example 2: new value is ${newValue}`);
   //   // axios call to db stop fe here....
@@ -10,11 +13,16 @@ const Book = ({ id, title, author }) => {
   //   console.log(res);
   // };
 
+  // const history = useHistory();
   return (
     <div style={styles.container}>
       <div style={styles.book}>
         <h3 style={styles.header}>{id} {title}</h3>
         <p style={styles.user}>{author}</p>
+      </div>
+      <div>
+        {/* <div onClick={() => history.push(`/books/${id}/edit`)}>Edit</div> */}
+        <div onClick={() => deleteBookProp(id)}>Delete</div>
       </div>
     </div>
   );
@@ -38,12 +46,6 @@ const styles = {
     justifyItems: "flex-start",
     flexDirection: "column",
   },
-  // info: {
-  //   display: "flex",
-  //   justifyContent: "space-between",
-  //   // justifyContent: "flex-end",
-  //   flexDirection: "row",
-  // },
   container: {
     display: "flex",
     justContent: "flex-start",
