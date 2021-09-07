@@ -13,7 +13,7 @@ const Book = ({ id, title, author, deleteBookProp }) => {
   //   console.log(res);
   // };
 
-  // const history = useHistory();
+  const history = useHistory();
   return (
     <div style={styles.container}>
       <div style={styles.book}>
@@ -21,7 +21,7 @@ const Book = ({ id, title, author, deleteBookProp }) => {
         <p style={styles.user}>{author}</p>
       </div>
       <div>
-        {/* <div onClick={() => history.push(`/books/${id}/edit`)}>Edit</div> */}
+        <div onClick={() => history.push(`/books/${id}/edit`)}>Edit</div>
         <div onClick={() => deleteBookProp(id)}>Delete</div>
       </div>
     </div>

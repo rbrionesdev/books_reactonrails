@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Books from "./components/Books"
 import { Switch, Route } from "react-router-dom";
 import BookForm from "./components/BookForm";
-// import EditBookForm from "./components/EditBookForm";
+import BookFormEdit from "./components/BookFormEdit";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/new" component={BookForm} />
-        {/* <Route exact path="/facts/:id/edit" component={EditFactForm} /> */}
+        <Route exact path="/books/:id/edit" component={BookFormEdit} />
 
         <Route component={() => <h1>Not Found</h1>} />
       </Switch>
