@@ -23,7 +23,7 @@ const BookForm = (props) => {
 
   return (
     <div>
-      <h1>Book Form</h1>
+      <h1>Add Book Form</h1>
 
       <div onClick={() => props.history.goBack()}>go back</div>
       {error && <p style={{ color: "red" }}>Error Occured</p>}
