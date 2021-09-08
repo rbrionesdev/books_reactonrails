@@ -49,10 +49,16 @@ const Books = (props) => {
 
   return (
     <div>
-      <h1>Books</h1>
+      <h1 style={styles.home}>Books</h1>
       <div>{renderBooks()}</div> 
     </div>
   );
+};
+
+const styles = {
+  home: {
+    textAlign: "center",
+  },
 };
 
 export default Books;

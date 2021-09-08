@@ -1,17 +1,9 @@
 import React from "react";
-import axios from "axios";
 import { useHistory } from "react-router";
-
+import 'semantic-ui-css/semantic.min.css'
 
 
 const Book = ({ id, title, author, deleteBookProp }) => {
-  // const handleStarClick = async (newValue) => {
-  //   console.log(`Example 2: new value is ${newValue}`);
-  //   // axios call to db stop fe here....
-  //   let res = await axios.put(`/api/books/${id}`);
-  //   // updateBook(res.data);
-  //   console.log(res);
-  // };
 
   const history = useHistory();
   return (
@@ -30,7 +22,7 @@ const Book = ({ id, title, author, deleteBookProp }) => {
 
 const styles = {
   header: {
-    fontSize: "36px",
+    fontSize: "26px",
   },
   user: {
     fontSize: "16px",
